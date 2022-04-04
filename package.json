@@ -1,0 +1,26 @@
+{
+  "name": "project-urlshortnergroup50",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Vipulvj1/project-urlShortnerGroup50.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Vipulvj1/project-urlShortnerGroup50/issues"
+  },
+  "homepage": "https://github.com/Vipulvj1/project-urlShortnerGroup50#readme",
+  "dependencies": {
+    "express": "^4.17.3",
+    "mongoose": "^6.2.9",
+    "shortid": "^2.2.16",
+    "valid-url": "^1.0.9"
+  }
+}
