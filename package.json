@@ -19,7 +19,9 @@
   "homepage": "https://github.com/Vipulvj1/project-urlShortnerGroup50#readme",
   "dependencies": {
     "express": "^4.17.3",
-    "mongoose": "^6.2.9",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.2.10",
+    "redis": "^3.1.2",
     "shortid": "^2.2.16",
     "valid-url": "^1.0.9"
   }
