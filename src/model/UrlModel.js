@@ -22,7 +22,9 @@ const urlCode = new mongoose.Schema({
         type: String,
         required: "shorturl is required", 
         unique:true
-    }
+    },
+    
+    date:{type:Date,default: Date.now}
 })
 
 module.exports = mongoose.model('url', urlCode)

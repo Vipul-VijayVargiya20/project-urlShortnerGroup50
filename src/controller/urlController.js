@@ -3,7 +3,7 @@ const shortid = require('shortid')
 const urlModel = require('../model/urlModel')
 const redis = require('redis');
 const {promisify } = require("util");
-// const validator = require("../utils/validator");
+
 ///////////////////////////////////////////////////////////////////////////
 
 // use of redis
@@ -75,7 +75,7 @@ const createurl = async function (req, res) {
         let checkforUrl = await GET_ASYNC(`${longUrl}`)
 
         if (checkforUrl) {
-            return res.status(200).send({ status: true, "data": JSON.parse(checkforUrl) })//---if already exist
+            return res.status(200).send({ status: true,message:"recieved from cache", data: JSON.parse(checkforUrl) })//---if already exist
         }
 
         //if data not found in caches find in MongoDb
@@ -83,7 +83,7 @@ const createurl = async function (req, res) {
         let url = await urlModel.findOne({ longUrl })
 
         if (url) {
-            return res.status(200).send({ status: true, "data": url }) //---if already exist
+            return res.status(200).send({ status: true, data: url }) //---if already exist
         }
         //---GENERATE DATA BY LONG URL
         const shortUrl = baseUrl + '/' + urlCode
@@ -98,9 +98,9 @@ const createurl = async function (req, res) {
         let data = ({ longurl, shorturl, urlcode })
 
         //---SET GENERATE DATA IN CACHE
-        await SET_ASYNC(`${longUrl}`, JSON.stringify(newurl))
+        await SET_ASYNC(`${longUrl}`, JSON.stringify(data))
 
-        return res.status(201).send({ status: true, msg: `URL created successfully`, data: data });
+        return res.status(201).send({ status: true, data: data });
 
 
     } catch (err) {
