@@ -5,7 +5,7 @@
 # Thorium GROUP NO. 50
 
 ## Scalable URL Shortner Project Requirement
-https://vipul-vijayvargiya20.github.io/project-urlShortnerGroup50/ quick preview
+
 
 ## Phase I
 
